@@ -15,6 +15,7 @@ import "./../globals.css";
 import Carousel from "./components/Carousel";
 import HeroBannerCarousel from "./components/HeroBannerCarousel";
 
+
 export default async function Home() {
   const bestSellingProducts = await getBestSellingProducts();
   const products = await getProducts();
@@ -25,19 +26,14 @@ export default async function Home() {
 
   return (
     <div className="">
-      {/* <HeroBanner
-        heroBanner={bannerContent.length > 0 ? bannerContent[0] : null}
-      /> */}
-      <HeroBannerCarousel
-        heroBanner={bannerContent ? bannerContent : null}
-      />
+      <HeroBannerCarousel heroBanner={bannerContent ? bannerContent : null} />
       <div>
         <div className="products-heading my-6">
           <h2> Best Selling Products</h2>
         </div>
         <Carousel products={bestSellingProducts} />
       </div>
-
+       
       <div>
         <div className="products-heading my-6">
           <h2> Electronics and gadgets</h2>

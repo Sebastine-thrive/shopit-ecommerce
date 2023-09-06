@@ -14,35 +14,34 @@ const Carousel = ({ products }) => {
 
   const slideRight = () => {
     if (position < products.length - 4) {
-      // Display 4 items at a time
+      // Display 4 items at a time for a given width of 270px
       setPosition(position + 1);
     }
   };
 
   return (
-    <div className="w-1000 overflow-hidden relative py-4">
+    <div className="w-1000 overflow-x-scroll relative py-4 px-2">
       <div
         className="flex space-x-4 transition-transform duration-300 ease-in-out transform"
-        style={{ transform: `translateX(-${position * 250}px)` }}
+        style={{ transform: `translateX(-${position * 270}px)` }}
       >
         {products.map((product) => (
           <Product key={product?._id} product={product} />
         ))}
       </div>
       <button
-        className="px-4 py-2 bg-white text-black font-extrabold rounded-full w-12 h-12 absolute left-[5%] top-[35%] flex text-center justify-center items-center"
+        className="px-4 py-2 bg-red-500 text-white font-extrabold rounded-full w-12 h-12 absolute left-[2%] top-[35%] flex text-center justify-center items-center"
         onClick={slideLeft}
       >
         <BiChevronsLeft />
       </button>
       <button
-        className="px-4 py-2 bg-white text-black font-extrabold rounded-full w-12 h-12  absolute left-[90%] top-[35%]  flex text-center justify-center items-center"
+        className="px-4 py-2 bg-red-500 text-white font-extrabold rounded-full w-12 h-12  absolute left-[90%] top-[35%]  flex text-center justify-center items-center"
         onClick={slideRight}
       >
         <BiChevronsRight />
       </button>
     </div>
-    // </div>
   );
 };
 

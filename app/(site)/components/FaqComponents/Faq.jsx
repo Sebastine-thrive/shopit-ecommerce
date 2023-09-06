@@ -4,20 +4,30 @@ import FaqItem from "./FaqItem";
 const Faq = () => {
   const faqData = [
     {
-      question: "What is the mission of this platform?",
+      question: "What is the mission of this Shopit?",
+      answer: "To provide quality goods for shopping at affordable prices",
+    },
+    {
+      question: "Can I Return the Items I Bought From ShopIt?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, pariatur. Esse dicta dolorem, et fugiat cum voluptatibus magnam dolorum optio nihil sapiente facere cumque sint.",
+        "Yes, you can return items you bought for free and get refunded as soon as possible! We have a refund policy that grants you 7 days to return items bought from the official store.",
+    },
+    {
+      question: "Can I get Free Delivery on All my Orders?",
+      answer:
+        "Customers can enjoy free delivery on some products not all. Free delivery does not apply to large items like refrigerators, TVs,  and others.",
     },
   ];
 
   return (
-    <div className="faq mt-4">
-      <h2 className="text-2xl font-bold mb-4 flex text-center items-center">FAQs</h2>
+    <div className="faq oveflow-y-scroll">
+      <h2 className="text-2xl font-bold mb-4 flex text-center items-center ">FAQs</h2>
       <div className="accordion">
         {faqData.map((item, index) => (
           <FaqItem key={index} question={item.question} answer={item.answer} />
         ))}
       </div>
+     
     </div>
   );
 };

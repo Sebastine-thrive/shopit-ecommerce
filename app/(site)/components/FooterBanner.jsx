@@ -7,7 +7,6 @@ const FooterBanner = ({ footerBanner }) => {
   return (
     <div className="footer-banner-container">
       <Faq />
-     
     </div>
   );
 };
