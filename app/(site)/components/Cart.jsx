@@ -9,12 +9,10 @@ import { toast } from "react-hot-toast";
 import getStripe from "../utils/getStripe";
 
 const Cart = () => {
-
-
   const handleCheckout = async (cartItems) => {
     const stripe = await getStripe();
-    // console.log(cartItems);
 
+    //  API request to Nextjs backend
     const response = await fetch("/api/", {
       method: "POST",
       headers: {
@@ -23,13 +21,21 @@ const Cart = () => {
       body: JSON.stringify(cartItems),
     });
 
-    if (response.statusCode === 500) return;
+    try {
+      if (response.statusCode === 500) return;
 
-    const data = await response.json();
-    console.log(data);
-    toast.loading("Redirecting...Please wait");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
 
-    stripe.redirectToCheckout({ sessionId: data.id });
+      const data = await response.json();
+      console.log(data);
+      toast.loading("Redirecting...Please wait");
+
+      stripe.redirectToCheckout({ sessionId: data.id });
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (
@@ -46,9 +52,7 @@ const Cart = () => {
 
         {/* Cart Checkout */}
         <div className="mt-8">
-          <CartCheckout
-          handleCheckout={handleCheckout}
-          />
+          <CartCheckout handleCheckout={handleCheckout} />
         </div>
       </div>
     </CartWrapper>

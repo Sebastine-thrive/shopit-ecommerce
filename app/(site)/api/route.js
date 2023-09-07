@@ -1,8 +1,8 @@
-import Stripe from "stripe";
+import { NextResponse } from "next/server";
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-
-export async function POST(req, res) {
+export async function POST(req) {
   if (req.method === "POST") {
     try {
       const params = {
@@ -40,13 +40,12 @@ export async function POST(req, res) {
       };
 
       const session = await stripe.checkout.sessions.create(params);
-      res.status(200).json(session);
-      // res.redirect(303, session.url);
+      NextResponse.status(200).json({session});
     } catch (err) {
-      res.status(err.statusCode || 500).json(err.message);
+      NextResponse.status(err.statusCode || 500).json(err.message);
     }
   } else {
-    res.setHeader("Allow", "POST");
-    res.status(405).end("Method Not Allowed");
+    NextResponse.setHeader("Allow", "POST");
+    NextResponse.status(405).end("Method Not Allowed");
   }
 }

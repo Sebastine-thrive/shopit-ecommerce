@@ -2,9 +2,6 @@
 import React, {useState} from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-
-
-        
 function FaqItem({ question, answer }) {
   const [isOpen, setIsOpen] = useState(false);
 
