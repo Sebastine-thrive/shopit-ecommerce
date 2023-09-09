@@ -22,7 +22,6 @@ export default async function Home() {
   const bannerContent = await getBannerData();
   const electronics = await getElectronicsProducts();
   const clothing = await getClothingProducts();
-  // console.log(products);
 
   return (
     <div className="">
@@ -56,7 +55,7 @@ export default async function Home() {
         </div>
       </Suspense> */}
 
-      <FooterBanner footerBanner={bannerContent ? bannerContent[0] : null} />
+      <FooterBanner />
     </div>
   );
 }

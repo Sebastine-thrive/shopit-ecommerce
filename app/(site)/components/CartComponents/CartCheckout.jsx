@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
+import getStripe from "../../utils/getStripe";
 
-const CartCheckout = ({handleCheckout}) => {
+const CartCheckout = ({ handleCheckout }) => {
   const { totalPrice, cartItems } = useStateContext();
-
 
   return (
     <>
       <Toaster position="top-center" />
       {cartItems.length >= 1 ? (
         <div className="cart-bottom my-4">
-          <div className="total">
+          <div className="total font-bold">
             <h3>Subtotal:</h3>
             <h3>
               {totalPrice.toLocaleString("en-NG", {
@@ -23,8 +23,11 @@ const CartCheckout = ({handleCheckout}) => {
             </h3>
           </div>
           <div className="btn-container">
-            <button className="btn" type="button" 
-            onClick={() => handleCheckout(cartItems)}>
+            <button
+              className="btn"
+              type="button"
+              onClick={() => handleCheckout(cartItems)}
+            >
               Pay with stripe
             </button>
           </div>

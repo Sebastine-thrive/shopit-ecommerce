@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import getStripe from "../utils/getStripe";
 
 const Cart = () => {
-  const handleCheckout = async (cartItems) => {
+  const handleCheckout = async (cartitems) => {
     const stripe = await getStripe();
 
     //  API request to Nextjs backend
@@ -18,24 +18,18 @@ const Cart = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cartItems),
+      body: JSON.stringify(cartitems),
     });
 
-    try {
-      if (response.statusCode === 500) return;
+    if (response.statusCode === 500) return;
+    // console.log(response);
+    console.log(response.statusCode);
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+    const data = await response.json();
+    // console.log(data);
+    toast.loading("Redirecting...Please wait");
 
-      const data = await response.json();
-      console.log(data);
-      toast.loading("Redirecting...Please wait");
-
-      stripe.redirectToCheckout({ sessionId: data.id });
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
+    stripe.redirectToCheckout({ sessionId: data.id });
   };
 
   return (

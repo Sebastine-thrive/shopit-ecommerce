@@ -122,7 +122,7 @@ span.text-red {
   max-width: 260px;
   height: 260px;
   max-height: 260px;
-  border: 1px solid #324d67;
+  /* border: 1px solid #324d67; */
   border-radius: 10px;
   padding: 5px;
   margin: 0 5px;
@@ -130,7 +130,7 @@ span.text-red {
 
 .product-card:hover {
   transform: scale(1.05, 1.05);
-  box-shadow: 0 0 20px #de0505b3;
+  box-shadow: 0 0 10px #de0505b3;
 }
 .product-image {
   border-radius: 15px;
@@ -742,12 +742,20 @@ span.text-red {
     font-size: 3rem;
   }
 
+  .hero-banner-container .small-text {
+    width: 375px;
+  }
+
   .desc {
     display: none;
   }
+
   .hero-banner-image {
+    margin-top:2rem;
     width: 250px;
     height: 250px;
+    max-height: 250px;
+    padding-bottom: 0;
   }
 }
 
@@ -761,7 +769,6 @@ span.text-red {
 
   .product-card {
     width: 160px;
-    height: 180px;
   }
 
   .product-image {
@@ -770,6 +777,7 @@ span.text-red {
   }
 
   .product-name {
+      text-align: center;
     font-weight: 200;
     max-width: 150px;
     overflow-x: hidden;

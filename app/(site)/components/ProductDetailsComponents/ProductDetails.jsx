@@ -1,10 +1,8 @@
 import React from "react";
 import ImageDisplay from "./ImageDisplay";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import ProductQuantity from "./ProductQuantity";
 import AddToCartAndBuy from "./AddToCartAndBuy";
 import Product from "../Product";
-// import Product from "@/sanity/product";
 import "./../../../globals.css";
 import { Toaster } from "react-hot-toast";
 import StarRating from "./StarRating";
@@ -28,7 +26,6 @@ const ProductDetails = ({ product, products, slug }) => {
             <div className="flex">
               {" "}
               <StarRating />
-          
             </div>
           </div>
           <h4 className="font-medium">Details:</h4>
@@ -42,7 +39,7 @@ const ProductDetails = ({ product, products, slug }) => {
           </p>
 
           {/* usecontext-dependent component  quantity component*/}
-          <ProductQuantity />
+          <ProductQuantity slug={slug} />
           {/* usecontext-dependent component  add-to-cart component
            */}
           <div className="buttons">

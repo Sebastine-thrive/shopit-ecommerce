@@ -21,7 +21,6 @@ function FaqItem({ question, answer }) {
             // "▲" :
             <IoIosArrowUp size={20} />
           ) : (
-            // "▼"
 
             <IoIosArrowDown size={20} />
           )}

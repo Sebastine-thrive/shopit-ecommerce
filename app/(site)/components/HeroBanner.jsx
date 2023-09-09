@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Image from "next/image";
+import Img from "next/image";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
 
@@ -15,12 +15,12 @@ const HeroBanner = ({ heroBanner }) => {
           <button type="button mt-8"> {heroBanner?.buttonText} </button>
         </Link>
       </div>
-      <div className="mt-[-2rem]">
-        <img
+      <div className="mt-4">
+        <Img
           src={urlForImage(heroBanner?.image).url()}
           alt="product image"
           width={400}
-          height={400}
+          height={350}
           className="hero-banner-image"
         />
         <div className="desc mt-4 ">

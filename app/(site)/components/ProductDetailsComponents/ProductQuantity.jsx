@@ -1,25 +1,30 @@
 "use client";
 import React from "react";
-import {
-  AiFillStar,
-  AiOutlineMinus,
-  AiOutlinePlus,
-  AiOutlineStar,
-} from "react-icons/ai";
-import { useState } from "react";
-import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
 import QuantityComponent from "../QuantityComponent";
-// import QuantityComponent from "../QuantityComponent";
+import "./../../../globals.css";
 
-const ProductQuantity = () => {
- 
+
+const ProductQuantity = ({ slug }) => {
+  const { cartItems } = useStateContext();
+
+  function isProductInCart(productSlug, cartitems) {
+    for (const product of cartitems) {
+      if (product?.slug?.current === productSlug) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   return (
     <>
-      <div className="quantity">
-        <h3 className="font-medium"> Quantity:</h3>
-       <QuantityComponent />
-      </div>
+      {!isProductInCart(slug, cartItems) ? (
+        <div className="quantity">
+          <h3 className="font-medium"> Quantity:</h3>
+          <QuantityComponent />
+        </div>
+      ) : null}
     </>
   );
 };

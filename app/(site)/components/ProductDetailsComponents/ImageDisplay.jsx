@@ -2,6 +2,8 @@
 "use client";
 import React, { useState } from "react";
 import { urlForImage } from "@/sanity/lib/image";
+import Img from "next/image";
+
 import "./../../../globals.css";
 
 const ImageDisplay = ({ image }) => {
@@ -11,7 +13,7 @@ const ImageDisplay = ({ image }) => {
   return (
     <>
       <div className="image-container">
-        <img
+        <Img
           // src=""
           src={image ? urlForImage(image[index])?.url() : null}
           alt="large product image"
@@ -23,7 +25,7 @@ const ImageDisplay = ({ image }) => {
       <div className="small-images-container">
         {/* Image client component needing server image prop */}
         {image?.map((item, i) => (
-          <img
+          <Img
             src={urlForImage(item).url()}
             key={i}
             alt="smaller product image"

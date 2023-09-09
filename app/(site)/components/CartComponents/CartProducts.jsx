@@ -4,6 +4,9 @@ import React from "react";
 import { urlForImage } from "@/sanity/lib/image";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
+import Img from "next/image";
+
+
 import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
 
@@ -16,11 +19,11 @@ const CartProducts = () => {
         {cartItems?.length >= 1
           ? cartItems.map((item) => (
               <div className="product" key={item?._id}>
-                <img
-                  src={urlForImage(item?.image[0])}
+                <Img
+                  src={urlForImage(item?.image[0])?.url()}
                   alt="cart item product"
-                  width="180"
-                  height="150"
+                  width={130}
+                  height={120}
                   className="cart-product-image bg-[#ebebeb]"
                 />
                 <div className="item-desc">

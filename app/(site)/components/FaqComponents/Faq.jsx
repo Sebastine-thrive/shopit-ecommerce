@@ -20,9 +20,9 @@ const Faq = () => {
   ];
 
   return (
-    <div className="faq oveflow-y-scroll">
-      <h2 className="text-2xl font-bold mb-4 flex text-center items-center ">FAQs</h2>
-      <div className="accordion">
+    <div className="faq flex flex-col text-center ">
+      <h2 className="text-2xl font-bold mb-4 ">FAQs</h2>
+      <div className="accordion  text-center">
         {faqData.map((item, index) => (
           <FaqItem key={index} question={item.question} answer={item.answer} />
         ))}
