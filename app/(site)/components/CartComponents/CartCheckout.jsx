@@ -1,12 +1,59 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
-import getStripe from "../../utils/getStripe";
+import { usePaystackPayment } from "react-paystack";
+import { redirect } from "next/navigation";
 
-const CartCheckout = ({ handleCheckout }) => {
-  const { totalPrice, cartItems } = useStateContext();
+const CartCheckout = () => {
+  const {
+    totalPrice,
+    cartItems,
+    setCartItems,
+    setTotalPrice,
+    setTotalQuantity,
+  } = useStateContext();
+  const [payLater, setPaylater] = useState(false);
+
+  const config = {
+    reference: new Date().getTime().toString(),
+    email: "sebastinoptimum@gmail.com",
+    amount: totalPrice * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+    publicKey: "pk_test_e0ba662e63d9fa5b789b7cc1d558a1463ab6701f",
+  };
+
+  const onSuccess = () => {
+    // Implementation for after success call.
+
+    setCartItems([]);
+    setTotalPrice(0);
+    setTotalQuantity(0);
+    // redirect("/", "replace");
+  };
+
+  // you can call this function anything
+  const onClose = () => {
+    setPaylater(true);
+    console.log("closed");
+  };
+
+  const PaystackHookExample = () => {
+    const initializePayment = usePaystackPayment(config);
+    return (
+      <div className="btn-container">
+        <button
+          className="btn"
+          onClick={() => {
+            initializePayment(onSuccess, onClose);
+          }}
+        >
+          Pay
+        </button>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -22,14 +69,9 @@ const CartCheckout = ({ handleCheckout }) => {
               })}
             </h3>
           </div>
-          <div className="btn-container">
-            <button
-              className="btn"
-              type="button"
-              onClick={() => handleCheckout(cartItems)}
-            >
-              Pay with stripe
-            </button>
+
+          <div>
+            <PaystackHookExample />
           </div>
         </div>
       ) : null}

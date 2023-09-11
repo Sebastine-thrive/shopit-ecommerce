@@ -1,7 +1,5 @@
 import { client } from "@/sanity/lib/client";
-// import getStripe from "@/app/utils/getStripe";
 import { toast, Toaster } from "react-hot-toast";
-import getStripe from "./getStripe";
 
 
 export async function getProducts() {

@@ -5,32 +5,8 @@ import CartProducts from "./CartComponents/CartProducts";
 import "../../globals.css";
 import CartWrapper from "./CartComponents/CartWrapper";
 import CartCheckout from "./CartComponents/CartCheckout";
-import { toast } from "react-hot-toast";
-import getStripe from "../utils/getStripe";
 
 const Cart = () => {
-  const handleCheckout = async (cartitems) => {
-    const stripe = await getStripe();
-
-    //  API request to Nextjs backend
-    const response = await fetch("/api/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(cartitems),
-    });
-
-    if (response.statusCode === 500) return;
-    // console.log(response);
-    console.log(response.statusCode);
-
-    const data = await response.json();
-    // console.log(data);
-    toast.loading("Redirecting...Please wait");
-
-    stripe.redirectToCheckout({ sessionId: data.id });
-  };
 
   return (
     <CartWrapper>
@@ -46,7 +22,9 @@ const Cart = () => {
 
         {/* Cart Checkout */}
         <div className="mt-8">
-          <CartCheckout handleCheckout={handleCheckout} />
+          <CartCheckout 
+          // handleCheckout={handleCheckout} 
+          />
         </div>
       </div>
     </CartWrapper>
