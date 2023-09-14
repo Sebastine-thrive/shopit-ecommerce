@@ -5,7 +5,8 @@ import toast, { Toaster } from "react-hot-toast";
 import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
 import { usePaystackPayment } from "react-paystack";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+
 
 const CartCheckout = () => {
   const {
@@ -14,29 +15,29 @@ const CartCheckout = () => {
     setCartItems,
     setTotalPrice,
     setTotalQuantity,
+    setShowCart
   } = useStateContext();
   const [payLater, setPaylater] = useState(false);
+ const router = useRouter();
 
   const config = {
     reference: new Date().getTime().toString(),
-    email: "sebastinoptimum@gmail.com",
+    email: "orderexample@gmail.com",
     amount: totalPrice * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: "pk_test_e0ba662e63d9fa5b789b7cc1d558a1463ab6701f",
   };
 
   const onSuccess = () => {
     // Implementation for after success call.
-
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantity(0);
-    // redirect("/", "replace");
+    setShowCart(false)
+    router.push("/success")
   };
 
-  // you can call this function anything
   const onClose = () => {
     setPaylater(true);
-    console.log("closed");
   };
 
   const PaystackHookExample = () => {

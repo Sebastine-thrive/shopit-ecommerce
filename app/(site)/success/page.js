@@ -1,20 +1,12 @@
-"use client";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 import { BsBagCheckFill } from "react-icons/bs";
-import { useStateContext } from "../context/StateContext";
+
 
 const Success = () => {
-  const { setCartItems, setTotalQuantity, setTotalPrice } = useStateContext();
-
-  useEffect(() => {
-    setCartItems([]);
-    setTotalPrice(0);
-    setTotalQuantity(0);
-  }, []);
 
   return (
-    <div className="success-wrapper">
+    <div className="success-wrapper flex justify-center items-center">
       <div className="success">
         <p className="icon">
           <BsBagCheckFill />
@@ -27,7 +19,7 @@ const Success = () => {
         </p>
         <p className="description">
           {" "}
-          Have any Questions, email
+          Have any Questions, email us at
           <a href="mailto:order@example.com" className="email">
             order@example.com
           </a>

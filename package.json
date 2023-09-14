@@ -17,6 +17,7 @@
     "canvas-confetti": "^1.6.0",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "framer-motion": "^10.16.4",
     "next": "13.4.12",
     "next-sanity": "^5.1.2",
     "next-sanity-image": "^6.1.0",

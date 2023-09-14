@@ -5,9 +5,12 @@ import Img from "next/image";
 
 import { urlForImage } from "@/sanity/lib/image";
 
+
 const Product = ({ product: { image, name, slug, price } }) => {
   return (
-    <div>
+    <div
+   
+    >
       <Link href={`/product/${slug?.current}`}>
         <div className="product-card xs:flex   xs:flex-col xs:justify-center xs:items-center md:block">
           <Img

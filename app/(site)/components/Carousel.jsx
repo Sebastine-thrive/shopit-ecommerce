@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Product from "./../components/Product";
 import { BiChevronsLeft, BiChevronsRight } from "react-icons/bi";
 
+
+
 const Carousel = ({ products }) => {
   const [position, setPosition] = useState(0);
 

@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { urlForImage } from "@/sanity/lib/image";
 
 const HeroBannerCarousel = ({ heroBanner }) => {
@@ -24,14 +25,23 @@ const HeroBannerCarousel = ({ heroBanner }) => {
           <p className="small-text mt-8">
             {heroBanner[currentIndex]?.smallText}
           </p>
-          <h1 className="mt-4">{heroBanner[currentIndex]?.largeText1}</h1>
-          <h3 className="xs:mt-4 lg:mt-8">{heroBanner[currentIndex]?.midText}</h3>
+          <h1
+           
+            className="mt-4"
+          >
+            {heroBanner[currentIndex]?.largeText1}
+          </h1>
+          <h3
+            className="xs:mt-4 lg:mt-8"
+          >
+            {heroBanner[currentIndex]?.midText}
+          </h3>
           <div className="xs:mt-[1rem] md:mt-[2rem]lg:mt-4">
-          <Link href={`/product/${heroBanner[currentIndex]?.product}`}>
-            <button type="button" >
-              {heroBanner[currentIndex]?.buttonText}
-            </button>
-          </Link>
+            <Link href={`/product/${heroBanner[currentIndex]?.product}`}>
+              <button type="button">
+                {heroBanner[currentIndex]?.buttonText}
+              </button>
+            </Link>
           </div>
         </div>
 

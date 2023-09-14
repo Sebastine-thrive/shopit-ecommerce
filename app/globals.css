@@ -183,10 +183,16 @@ span.text-red {
   color: white;
   font-size: 7rem;
   text-transform: uppercase;
+  font-family: "Gilroy-Bold", sans-serif;
 }
 .hero-banner-container h3 {
   font-size: 3.5rem;
   margin-top: 4px;
+  font-family: "Gilroy-Medium", sans-serif;
+}
+
+.hero-banner-container p {
+  font-family: "Gilroy-Medium", sans-serif;
 }
 
 .hero-banner-image {
@@ -536,13 +542,14 @@ span.text-red {
 .success-wrapper,
 .cancel-wrapper {
   background-color: white;
+  height: 100vh;
   min-height: 60vh;
 }
 .success,
 .cancel {
   width: 1000px;
   margin: auto;
-  margin-top: 160px;
+  /* margin-top: 160px; */
   background-color: #dcdcdc;
   padding: 50px;
   border-radius: 15px;
@@ -614,7 +621,6 @@ span.text-red {
 }
 
 @media screen and (max-width: 921px) {
-
   .hero-banner-container .hero-info {
     width: 100%;
   }
@@ -751,7 +757,7 @@ span.text-red {
   }
 
   .hero-banner-image {
-    margin-top:2rem;
+    margin-top: 2rem;
     width: 250px;
     height: 250px;
     max-height: 250px;
@@ -777,7 +783,7 @@ span.text-red {
   }
 
   .product-name {
-      text-align: center;
+    text-align: center;
     font-weight: 200;
     max-width: 150px;
     overflow-x: hidden;
@@ -810,7 +816,7 @@ span.text-red {
   }
 
   .btn {
-    width:80%;
+    width: 80%;
     max-width: 250px;
   }
 }
