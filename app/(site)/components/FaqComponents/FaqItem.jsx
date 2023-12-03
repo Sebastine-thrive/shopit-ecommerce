@@ -10,7 +10,7 @@ function FaqItem({ question, answer }) {
   };
 
   return (
-    <div className="border-b border-gray-300 w-[95%] ">
+    <div className="border-b border-gray-300 w-full ">
       <div
         className="flex justify-between items-center p-4 cursor-pointer"
         onClick={toggleAccordion}

@@ -14,7 +14,6 @@ export default function RootLayout({ children }) {
       <Head>
         {" "}
         <link
-          href="https://fonts.cdnfonts.com/css/gilroy-bold"
           rel="stylesheet"
         />{" "}
       </Head>

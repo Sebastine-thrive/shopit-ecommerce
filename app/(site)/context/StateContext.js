@@ -69,7 +69,7 @@ export const StateContext = ({ children }) => {
           ...newCartItems,
           { ...foundProduct, quantity: foundProduct.quantity - 1 },
         ]);
-        setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
         setTotalQuantity((prevTotalQuantity) => prevTotalQuantity - 1);
       }
     }

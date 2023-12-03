@@ -15,7 +15,7 @@ const CartProducts = () => {
 
   return (
     <>
-      <div className="product-container w-[95%]">
+      <div className="product-container w-[98%]">
         {cartItems?.length >= 1
           ? cartItems.map((item) => (
               <div className="product" key={item?._id}>
@@ -42,7 +42,7 @@ const CartProducts = () => {
                     <div>
                       <div className=" quantity-desc marker:border-2 border-gray-500 p-[6px] h-[2rem] w-[6rem] max-w-[8rem] flex  items-center ">
                         <span
-                          className="minus"
+                          className="minus cursor-pointer"
                           onClick={() =>
                             toggleCartItemQuantity(item._id, "decrease")
                           }
@@ -54,7 +54,7 @@ const CartProducts = () => {
                           {item?.quantity}
                         </span>
                         <span
-                          className="plus"
+                          className="plus cursor-pointer"
                           onClick={() =>
                             toggleCartItemQuantity(item?._id, "increase")
                           }

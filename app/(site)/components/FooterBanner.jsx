@@ -5,7 +5,7 @@ import Faq from "./FaqComponents/Faq";
 const FooterBanner = () => {
  
   return (
-    <div className="footer-banner-container w-full">
+    <div className="footer-banner-container ">
       <Faq />
     </div>
   );

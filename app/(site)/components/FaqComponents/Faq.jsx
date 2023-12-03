@@ -20,7 +20,7 @@ const Faq = () => {
   ];
 
   return (
-    <div className="faq flex flex-col text-center ">
+    <div className="faq flex flex-col text-center gap-2 w-[90%] m-auto ">
       <h2 className="text-2xl font-bold mb-4 ">FAQs</h2>
       <div className="accordion  text-center">
         {faqData.map((item, index) => (

@@ -14,7 +14,7 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantity } = useStateContext();
 
   return (
-    <div className="navbar-container bg-[#535357]">
+    <div className="navbar-container bg-[#535357] max-w-[1920px] w-[100vw] h-auto mt-0">
       <p className="logo ">
         {" "}
         <Link href="/">
@@ -23,7 +23,7 @@ const Navbar = () => {
       </p>
 
       <button
-        className="cart-icon"
+        className="cart-icon mt-2"
         type="button"
         onClick={() => setShowCart(true)}
       >

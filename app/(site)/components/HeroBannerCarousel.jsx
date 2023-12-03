@@ -2,9 +2,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, variants } from "framer-motion";
 import { urlForImage } from "@/sanity/lib/image";
 
+const variants1 = {
+  enter: { opacity: 0.6, x: 50 },
+  visble: { opacity: 1, x: 0 },
+  exit: { opacity: 0.6, x: 0 },
+};
 const HeroBannerCarousel = ({ heroBanner }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -19,21 +24,23 @@ const HeroBannerCarousel = ({ heroBanner }) => {
   }, [heroBanner]);
 
   return (
-    <div className="hero-banner-carousel">
-      <div className="hero-banner-container flex xxs:flex-col lg:flex-row xxs:mt-4">
-        <div className="hero-info xs:mr-[2rem] lg:mr-[7rem] xxs:mt-[-4rem] lg:mt-8 ">
+    <div className="hero-banner-carousel max-w-[1280px] w-[95%] m-auto mt-0 ">
+      <div
+        variants={variants1}
+        initial="enter"
+        animate="visible"
+        exit="exit"
+        className="hero-banner-container flex xxs:flex-col lg:flex-row xxs:mt-4"
+      >
+        <div
+          key={currentIndex}
+          className="hero-info xs:mr-[2rem] lg:mr-[7rem] xxs:mt-[-4rem] lg:mt-8 "
+        >
           <p className="small-text mt-8">
             {heroBanner[currentIndex]?.smallText}
           </p>
-          <h1
-           
-            className="mt-4"
-          >
-            {heroBanner[currentIndex]?.largeText1}
-          </h1>
-          <h3
-            className="xs:mt-4 lg:mt-8"
-          >
+          <h1 className="mt-4">{heroBanner[currentIndex]?.largeText1}</h1>
+          <h3 className="xs:mt-4 lg:mt-8">
             {heroBanner[currentIndex]?.midText}
           </h3>
           <div className="xs:mt-[1rem] md:mt-[2rem]lg:mt-4">
@@ -47,6 +54,9 @@ const HeroBannerCarousel = ({ heroBanner }) => {
 
         <div className="hero-img lg:mt-[-2rem] xxs:mt-4 ">
           <img
+            // initial={{ opacity: 0.6, x: -20 }}
+            // animate={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 1 }}
             src={urlForImage(heroBanner[currentIndex]?.image).url()}
             alt="product image"
             width={400}
@@ -63,9 +73,10 @@ const HeroBannerCarousel = ({ heroBanner }) => {
             </div>
           </div>
         </div>
+        {/* </AnimatePresence> */}
       </div>
 
-      <div className="indicators text-black">
+      <div className="indicators text-black  ">
         {heroBanner.map((_, index) => (
           <div
             key={index}
