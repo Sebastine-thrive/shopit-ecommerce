@@ -20,8 +20,8 @@ const ProductQuantity = ({ slug }) => {
   return (
     <>
       {!isProductInCart(slug, cartItems) ? (
-        <div className="quantity">
-          <h3 className="font-medium"> Quantity:</h3>
+        <div className="quantity mt-4">
+          <h3 className="font-semibold"> Quantity:</h3>
           <QuantityComponent />
         </div>
       ) : null}

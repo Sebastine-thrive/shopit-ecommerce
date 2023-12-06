@@ -43,7 +43,7 @@ const CartCheckout = () => {
   const PaystackHookExample = () => {
     const initializePayment = usePaystackPayment(config);
     return (
-      <div className="btn-container">
+      <div className="payment-btn-container">
         <button
           className="btn"
           onClick={() => {
@@ -61,7 +61,7 @@ const CartCheckout = () => {
       <Toaster position="top-center" />
       {cartItems.length >= 1 ? (
         <div className="cart-bottom my-4">
-          <div className="total font-bold">
+          <div className="total font-bold my-0">
             <h3>Subtotal:</h3>
             <h3>
               {totalPrice.toLocaleString("en-NG", {

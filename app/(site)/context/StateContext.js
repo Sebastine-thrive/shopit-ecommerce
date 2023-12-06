@@ -55,25 +55,32 @@ export const StateContext = ({ children }) => {
     foundProduct = cartItems.find((item) => item._id === id);
     index = cartItems.findIndex((product) => product._id === id);
     const newCartItems = cartItems.filter((item) => item._id !== id);
-
+  
+    let updatedItem;
     if (value === "increase") {
-      setCartItems([
-        ...newCartItems,
-        { ...foundProduct, quantity: foundProduct.quantity + 1 },
-      ]);
-      setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
-      setTotalQuantity((prevTotalQuantity) => prevTotalQuantity + 1);
+      updatedItem = { ...foundProduct, quantity: foundProduct.quantity + 1 };
     } else if (value === "decrease") {
       if (foundProduct.quantity > 1) {
-        setCartItems([
-          ...newCartItems,
-          { ...foundProduct, quantity: foundProduct.quantity - 1 },
-        ]);
-        setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
-        setTotalQuantity((prevTotalQuantity) => prevTotalQuantity - 1);
+        updatedItem = { ...foundProduct, quantity: foundProduct.quantity - 1 };
       }
     }
+  
+    if (updatedItem) {
+      const updatedCartItems = [...newCartItems, updatedItem];
+      const sortedCartItems = updatedCartItems.sort((a, b) =>
+        a._id.localeCompare(b._id)
+      );
+  
+      setCartItems(sortedCartItems);
+      setTotalPrice((prevTotalPrice) => {
+        const priceChange = value === "increase" ? foundProduct.price : -foundProduct.price;
+        return prevTotalPrice + priceChange;
+      });
+      setTotalQuantity((prevTotalQuantity) => prevTotalQuantity + (value === "increase" ? 1 : -1));
+    }
   };
+  
+  
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
   };

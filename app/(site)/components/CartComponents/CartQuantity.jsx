@@ -10,11 +10,11 @@ const CartQuantity = () => {
   const { totalQuantity, setShowCart } = useStateContext();
   return (
     <div className="cart-quantity-heading flex justify-between h-auto items-center">
-      <div className="flex ">
+      <div className="flex h-auto items-center">
         <button
           type="button"
-          className="cart-heading"
-          onClick={() => setShowCart(false)}
+          className="cartheading-back-btn"
+          onClick={() => setShowCart(false)} 
         >
           <BiChevronsLeft />
         </button>

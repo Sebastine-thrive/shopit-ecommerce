@@ -12,13 +12,13 @@ const ProductDetails = ({ product, products, slug }) => {
   return (
     <div>
       <Toaster position="top-center" />
-      {/* Image server component */}
+      {/* Image -server component */}
       <div className="product-detail-container">
         <div>
           <ImageDisplay image={image} />
         </div>
 
-        {/* Name and Price server components */}
+        {/* Name and Price- server components */}
         <div className="product-detail-desc w-[70vw]">
           <h1 className="font-bold text-xl capitalize">{name}</h1>
           <div className="reviews flex">
@@ -28,7 +28,7 @@ const ProductDetails = ({ product, products, slug }) => {
               <StarRating />
             </div>
           </div>
-          <h4 className="font-medium">Details:</h4>
+          <h4 className="font-semibold mt-4">Details:</h4>
           <p>{details}</p>
           <p className="price">
             {" "}
@@ -57,7 +57,7 @@ const ProductDetails = ({ product, products, slug }) => {
                 return <Product key={item._id} product={item} />;
               })
             ) : (
-              <p> Loading other products... </p>
+              <p> Loading other products you may like... </p>
             )}
           </div>
         </div>

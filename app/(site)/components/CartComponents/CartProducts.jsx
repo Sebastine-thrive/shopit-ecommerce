@@ -6,16 +6,16 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
 import Img from "next/image";
 
-
 import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
 
 const CartProducts = () => {
-  const { cartItems, onRemove, toggleCartItemQuantity } = useStateContext();
+  const { cartItems, onRemove, toggleCartItemQuantity, incQty, decQty } =
+    useStateContext();
 
   return (
     <>
-      <div className="product-container w-[98%]">
+      <div className="product-container w-[98%] mb-8">
         {cartItems?.length >= 1
           ? cartItems.map((item) => (
               <div className="product" key={item?._id}>
@@ -29,8 +29,8 @@ const CartProducts = () => {
                 <div className="item-desc">
                   {" "}
                   <div className="flex items-center top w-[70%]">
-                    <h5 className="text-[24px] capitalize"> {item?.name}</h5>
-                    <h4 className="text-[20px]">
+                    <h5 className="text-[16px] capitalize"> {item?.name}</h5>
+                    <h4 className="text-[18px]">
                       {" "}
                       {item?.price.toLocaleString("en-NG", {
                         style: "currency",

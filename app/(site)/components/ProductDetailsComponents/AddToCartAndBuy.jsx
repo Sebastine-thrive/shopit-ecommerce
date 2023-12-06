@@ -1,6 +1,8 @@
 "use client";
 // import { useStateContext } from "@/app/context/StateContext";
 import React from "react";
+import { BiChevronsRight } from "react-icons/bi";
+
 import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
 
@@ -24,7 +26,20 @@ const AddToCartAndBuy = ({ product, slug }) => {
   return (
     <>
       {isProductInCart(slug, cartItems) ? (
-        <p className="py-[10px]"> This product is in the cart</p>
+        <div className="product-in-cart flex">
+          {" "}
+          <p className="py-[10px]"> This product is in the cart</p>
+          <p
+            className="go-to-cart ml-2 text-red-500 flex items-center cursor-pointer"
+            onClick={() => setShowCart(true)}
+          >
+            Go to Cart{" "}
+            <span className="text-red-500">
+              {" "}
+              <BiChevronsRight />{" "}
+            </span>{" "}
+          </p>
+        </div>
       ) : (
         <div>
           <button
