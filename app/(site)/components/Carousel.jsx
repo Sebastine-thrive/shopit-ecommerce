@@ -34,7 +34,7 @@ const Carousel = ({ products, bgColor }) => {
   return (
     <div
       ref={containerRef}
-      className="w-full overflow-x-scroll md:overflow-hidden relative py-4 px-2"
+      className="w-full overflow-x-auto md:overflow-hidden relative py-4 px-2"
     >
       <div
         className="flex space-x-4 transition-transform duration-300 ease-in-out transform"

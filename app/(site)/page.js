@@ -24,10 +24,10 @@ export default async function Home() {
   const clothing = await getClothingProducts();
 
   return (
-    <>
+    <div className="overflow-hidden">
         <HeroBannerCarousel heroBanner={bannerContent ? bannerContent : null} />
 
-      <div className="best-selling-products">
+      <div className="best-selling-products ">
         <div className="products-heading my-6 ">
           <h2> Best Selling Products</h2>
         </div>
@@ -49,6 +49,6 @@ export default async function Home() {
       </div>
 
       <FooterBanner />
-    </>
+    </div>
   );
 }

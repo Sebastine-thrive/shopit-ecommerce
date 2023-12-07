@@ -19,7 +19,7 @@ const ProductDetails = ({ product, products, slug }) => {
         </div>
 
         {/* Name and Price- server components */}
-        <div className="product-detail-desc w-[70vw]">
+        <div className="product-detail-desc w-[100vw]">
           <h1 className="font-bold text-xl capitalize">{name}</h1>
           <div className="reviews flex">
             {" "}
@@ -28,21 +28,27 @@ const ProductDetails = ({ product, products, slug }) => {
               <StarRating />
             </div>
           </div>
-          <h4 className="font-semibold mt-4">Details:</h4>
-          <p>{details}</p>
-          <p className="price">
-            {" "}
-            {price.toLocaleString("en-NG", {
-              style: "currency",
-              currency: "NGN",
-            })}
-          </p>
 
-          {/* usecontext-dependent component  quantity component*/}
-          <ProductQuantity slug={slug} />
+          {/* Product details and price */}
+          <div className="mt-8">
+            <h4 className="font-semibold ">Details:</h4>
+            <p>{details}</p>
+            <p className="price">
+              {" "}
+              {price.toLocaleString("en-NG", {
+                style: "currency",
+                currency: "NGN",
+              })}
+            </p>
+          </div>
+
+          <div className="mt-8 text-center w-full">
+            {/* usecontext-dependent component  quantity component*/}
+            <ProductQuantity slug={slug} />
+          </div>
           {/* usecontext-dependent component  add-to-cart component
            */}
-          <div className="buttons">
+          <div className="buttons w-full">
             <AddToCartAndBuy product={product} slug={slug} />
           </div>
         </div>

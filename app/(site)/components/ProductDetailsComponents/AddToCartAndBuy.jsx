@@ -26,7 +26,7 @@ const AddToCartAndBuy = ({ product, slug }) => {
   return (
     <>
       {isProductInCart(slug, cartItems) ? (
-        <div className="product-in-cart flex">
+        <div className="product-in-cart flex justify-center">
           {" "}
           <p className="py-[10px]"> This product is in the cart</p>
           <p
@@ -41,12 +41,11 @@ const AddToCartAndBuy = ({ product, slug }) => {
           </p>
         </div>
       ) : (
-        <div>
+        <div className="flex justify-center">
           <button
             type="button"
             className="add-to-cart"
             onClick={() => onAdd(product, qty)}
-            disabled={isProductInCart(slug, cartItems)}
           >
             Add to Cart
           </button>
