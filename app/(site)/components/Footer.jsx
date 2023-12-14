@@ -6,8 +6,14 @@ const Footer = () => {
     <div className="footer-container  max-w-[1920px] w-[100vw] bg-[#535357] text-white">
       <p> 2023 ShopIt e-stores. All rights reserved</p>
       <p className="icons">
+        <span className="icon">
         <AiFillInstagram />
+
+        </span>
+        <span className="icon">
         <AiOutlineTwitter />
+
+        </span>
       </p>
     </div>
   );

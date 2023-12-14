@@ -11,13 +11,13 @@ const ImageDisplay = ({ image }) => {
   const [Loading, setIsLoading] = useState(false);
 
   return (
-    <>
+    <div className = "images-wrapper">
       <div className="image-container">
         <Img
           // src=""
           src={image ? urlForImage(image[index])?.url() : null}
           alt="large product image"
-          className="product-detail-image"
+          className="large-image"
           width="450"
           height="350"
         />
@@ -38,7 +38,7 @@ const ImageDisplay = ({ image }) => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

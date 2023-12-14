@@ -10,16 +10,16 @@ import StarRating from "./StarRating";
 const ProductDetails = ({ product, products, slug }) => {
   const { image, name, details, price } = product;
   return (
-    <div>
+    <div className="w-full">
       <Toaster position="top-center" />
       {/* Image -server component */}
-      <div className="product-detail-container">
-        <div>
+      <div className="product-detail-container xss:w-[100vw] md:w-full">
+        <div className="product-detail-image">
           <ImageDisplay image={image} />
         </div>
 
         {/* Name and Price- server components */}
-        <div className="product-detail-desc w-[100vw]">
+        <div className="product-detail-desc xss:w-[98%] md:w-[96%]">
           <h1 className="font-bold text-xl capitalize">{name}</h1>
           <div className="reviews flex">
             {" "}
@@ -42,13 +42,13 @@ const ProductDetails = ({ product, products, slug }) => {
             </p>
           </div>
 
-          <div className="mt-8 text-center w-full">
+          <div className="mt-8 product-quantity-wrapper">
             {/* usecontext-dependent component  quantity component*/}
             <ProductQuantity slug={slug} />
           </div>
           {/* usecontext-dependent component  add-to-cart component
            */}
-          <div className="buttons w-full">
+          <div className="buttons Add-product-to-cart-wrapper max-w-full">
             <AddToCartAndBuy product={product} slug={slug} />
           </div>
         </div>
