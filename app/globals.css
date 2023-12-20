@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* ash bg #f1f1f1 */
+/* ash header and footer bg */
 /* ash-green #e0e8d1 */
 /* green  #546e39 */
 /* 3003e29 */
@@ -184,7 +185,7 @@ span.text-red {
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  z-index: 10000 !important;
+  z-index: 1000 !important;
 }
 
 .hero-banner-container h1 {
@@ -300,7 +301,6 @@ span.text-red {
   width: 10%;
   display:flex;
   justify-content: space-between;
-  /* justify-content: center; */
 }
 
 .footer-container .icons .icon {
@@ -452,9 +452,11 @@ span.text-red {
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
+
 .product-detail-image:hover {
   background-color: #f02d34;
 }
+
 .small-images-container {
   display: flex;
   gap: 10px;
@@ -494,6 +496,7 @@ span.text-red {
   margin-top: 30px;
   color: #f02d34;
 }
+
 .price .old-price,
 .product-price .old-price,
 .price .old-price {
@@ -535,7 +538,6 @@ span.text-red {
   justify-content: center;
   gap: 30px;
 }
-
 
 .buttons .add-to-cart {
   padding: 10px 20px;

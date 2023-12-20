@@ -33,7 +33,8 @@ const AddToCartAndBuy = ({ product, slug }) => {
             className="go-to-cart ml-2 text-red-500 flex items-center cursor-pointer"
             onClick={() => setShowCart(true)}
           >
-            Go to Cart{" "}
+          
+          View Cart{" "}
             <span className="text-red-500">
               {" "}
               <BiChevronsRight />{" "}

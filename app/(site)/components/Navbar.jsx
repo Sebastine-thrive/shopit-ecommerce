@@ -5,7 +5,7 @@ import { AiOutlineShopping } from "react-icons/ai";
 import { Cart } from ".";
 import Image from "next/image";
 import { useStateContext } from "../context/StateContext";
-import logo from "./../../../public/logo/shopit-logo.png";
+import logo from "./../../../public/logo/shopit.png";
 import "./../../globals.css";
 
 
@@ -14,7 +14,7 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantity } = useStateContext();
 
   return (
-    <div className="navbar-container bg-[#535357] max-w-[1920px] w-[100vw] h-auto mt-0">
+    <div className="navbar-container bg-[#546e39] max-w-[1920px] w-[100vw] h-auto mt-0">
       <p className="logo ">
         {" "}
         <Link href="/">

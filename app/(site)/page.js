@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import { Product, FooterBanner, HeroBanner } from "./components";
-// import { motion, AnimatePresence, variants } from "framer-motion";
 
 import { Suspense } from "react";
 import {
