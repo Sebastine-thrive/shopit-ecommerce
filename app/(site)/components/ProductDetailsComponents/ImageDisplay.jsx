@@ -12,12 +12,11 @@ const ImageDisplay = ({ image }) => {
 
   return (
     <div className = "images-wrapper">
-      <div className="image-container">
+      <div className="image-container bg-white">
         <Img
-          // src=""
           src={image ? urlForImage(image[index])?.url() : null}
           alt="large product image"
-          className="large-image"
+          className="large-product-image bg-white"
           width="450"
           height="350"
         />

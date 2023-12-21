@@ -3,9 +3,11 @@ import ImageDisplay from "./ImageDisplay";
 import ProductQuantity from "./ProductQuantity";
 import AddToCartAndBuy from "./AddToCartAndBuy";
 import Product from "../Product";
-import "./../../../globals.css";
+import Link from "next/link";
+import { BiChevronsLeft } from "react-icons/bi";
 import { Toaster } from "react-hot-toast";
 import StarRating from "./StarRating";
+import "./../../../globals.css";
 
 const ProductDetails = ({ product, products, slug }) => {
   const { image, name, details, price } = product;
@@ -20,7 +22,7 @@ const ProductDetails = ({ product, products, slug }) => {
 
         {/* Name and Price- server components */}
         <div className="product-detail-desc xss:w-[98%] md:w-[96%]">
-          <h1 className="font-bold text-xl capitalize">{name}</h1>
+          <h1 className=" font-bold text-xl capitalize">{name}</h1>
           <div className="reviews flex">
             {" "}
             <div className="flex">
@@ -31,7 +33,7 @@ const ProductDetails = ({ product, products, slug }) => {
 
           {/* Product details and price */}
           <div className="mt-8">
-            <h4 className="font-semibold ">Details:</h4>
+            <h4 className=".details-heading font-semibold ">Details:</h4>
             <p>{details}</p>
             <p className="price">
               {" "}
@@ -51,6 +53,12 @@ const ProductDetails = ({ product, products, slug }) => {
           <div className="buttons Add-product-to-cart-wrapper max-w-full">
             <AddToCartAndBuy product={product} slug={slug} />
           </div>
+          <Link href="/">
+            <div className="redirect-home">
+              <BiChevronsLeft />
+              <h4 className=" font-medium"> Continue shopping </h4>
+            </div>
+          </Link>
         </div>
       </div>
 

@@ -1,4 +1,3 @@
-
 import { client } from "@/sanity/lib/client";
 import ProductDetails from "../../components/ProductDetailsComponents/ProductDetails";
 import { getProducts } from "../../utils/Utils";

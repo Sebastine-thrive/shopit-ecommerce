@@ -14,7 +14,7 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantity } = useStateContext();
 
   return (
-    <div className="navbar-container bg-[#546e39] max-w-[1920px] w-[100vw] h-auto mt-0">
+    <div className="navbar-container bg-[#546e39] max-w-[1920px] w-[100vw] h-auto min-h-[40px] mt-0">
       <p className="logo ">
         {" "}
         <Link href="/">

@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 // import { useStateContext } from "@/app/context/StateContext";
-import { BiChevronsLeft } from "react-icons/bi";
 import { TiDeleteOutline } from "react-icons/ti";
 import "./../../../globals.css";
 import { useStateContext } from "../../context/StateContext";
@@ -16,7 +15,6 @@ const CartQuantity = () => {
           className="cartheading-back-btn"
           onClick={() => setShowCart(false)} 
         >
-          <BiChevronsLeft />
         </button>
         <p>
           <span className="heading"> Your Cart</span>

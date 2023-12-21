@@ -1,23 +1,18 @@
-import Link from "next/link";
 import React from "react";
-import { Product, FooterBanner, HeroBanner } from "./components";
+import { FooterBanner} from "./components";
 
-import { Suspense } from "react";
 import {
-  getProducts,
   getBannerData,
   getElectronicsProducts,
   getBestSellingProducts,
   getClothingProducts,
 } from "./utils/Utils";
-import Loading from "./components/LoadingComponent";
 import "./../globals.css";
 import Carousel from "./components/Carousel";
 import HeroBannerCarousel from "./components/HeroBannerCarousel";
 
 export default async function Home() {
   const bestSellingProducts = await getBestSellingProducts();
-  const products = await getProducts();
   const bannerContent = await getBannerData();
   const electronics = await getElectronicsProducts();
   const clothing = await getClothingProducts();

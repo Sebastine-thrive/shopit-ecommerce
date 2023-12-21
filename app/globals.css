@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* ash bg #f1f1f1 */
 /* ash header and footer bg */
@@ -31,6 +31,11 @@ body,
 a {
   color: inherit;
   text-decoration: none;
+}
+
+Img {
+  width: auto;
+  height: auto;
 }
 
 .main-container {
@@ -66,7 +71,6 @@ a {
   width: 100%;
   overflow-x: hidden;
 }
-
 
 .track {
   position: absolute;
@@ -208,6 +212,7 @@ span.text-red {
 .hero-banner-image {
   width: 450px;
   height: 450px;
+  background-color: transparent;
 }
 
 .desc {
@@ -220,6 +225,19 @@ span.text-red {
 .desc p {
   font-size: 20px;
   text-align: end;
+}
+
+.redirect-home {
+  margin-top: 2rem;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: #546e39;
+}
+
+.redirect-home:hover,
+.redirect-home:focus {
+  color: red;
 }
 
 .desc h5 {
@@ -297,9 +315,9 @@ span.text-red {
   justify-content: center;
 }
 
-.footer-container .icons  {
+.footer-container .icons {
   width: 10%;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -445,7 +463,7 @@ span.text-red {
 
 .product-detail-image {
   border-radius: 15px;
-  background-color: #ebebeb;
+  background-color: white;
   width: 400px;
   height: 300px;
   aspect-ratio: 5/3;
@@ -454,7 +472,7 @@ span.text-red {
 }
 
 .product-detail-image:hover {
-  background-color: #f02d34;
+  background-color: white;
 }
 
 .small-images-container {
@@ -470,7 +488,7 @@ span.text-red {
   cursor: pointer;
 }
 .selected-image {
-  background-color: #f02d34;
+  background-color: white;
 }
 .reviews {
   color: #f02d34;
@@ -480,9 +498,6 @@ span.text-red {
   align-items: center;
 }
 
-.product-detail-desc h4 {
-  margin-top: 10px;
-}
 .product-detail-desc p {
   margin-top: 10px;
 }
@@ -590,7 +605,7 @@ span.text-red {
   display: flex;
   justify-content: center;
   gap: 15px;
-  padding-top:1rem;
+  padding-top: 1rem;
 }
 .max-qty {
   font-weight: 500;
@@ -663,7 +678,6 @@ span.text-red {
     border-bottom-right-radius: 8px;
   }
 
-  
   .quantity-desc {
     width: 120px;
   }
@@ -674,14 +688,13 @@ span.text-red {
     margin-top: 10px;
     justify-content: flex-start;
   }
-  
+
   .product-detail-desc .quantity {
     display: flex;
     width: 432px;
     margin-top: 10px;
     justify-content: center;
-  } 
-  
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -705,7 +718,6 @@ span.text-red {
     margin-top: 1rem;
   }
 
- 
   .product-detail-desc .buttons {
     display: flex;
     width: 100%;
@@ -722,7 +734,7 @@ span.text-red {
     width: 432px;
     margin-top: 10px;
     justify-content: center;
-  } 
+  }
 
   .cart-bottom .total {
     border-radius: 0;
@@ -767,6 +779,10 @@ span.text-red {
     margin: auto;
   }
 
+  .product-detail-desc {
+    margin-top: 3rem;
+  }
+
   .product-detail-desc .quantity,
   .product-detail-desc .buttons {
     display: flex;
@@ -778,6 +794,7 @@ span.text-red {
   .images-wrapper {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
     height: auto;
     align-items: flex-end;
     background-color: #fff;
@@ -790,7 +807,8 @@ span.text-red {
   .image-container .large-image {
     width: 350px;
     height: 200px;
-  } 
+    background-color: white;
+  }
 
   .cart-container {
     width: 60%;
@@ -914,6 +932,10 @@ span.text-red {
     display: none;
   }
 
+  .product-detail-desc {
+    margin-top:7rem;
+  }
+
   .hero-banner-image {
     margin-top: 2rem;
     width: 250px;
@@ -953,6 +975,7 @@ span.text-red {
 
   .product-card {
     width: 160px;
+    height: 200px;
   }
 
   .product-image {
@@ -987,16 +1010,16 @@ span.text-red {
   .image-container {
     margin-left: 0;
   }
-
+  
+/* 
   .product-detail-desc {
-    margin-top: 2.5rem;
-  }
+    margin-top: 7rem;
+  } */
 
   .product-detail-container .product-detail-image {
     width: 320px;
     height: 300px;
     background-color: white;
-
   }
 
   .small-images-container {
@@ -1013,7 +1036,6 @@ span.text-red {
     width: 100%;
     justify-content: center;
   }
-
 
   .buttons .add-to-cart {
     width: 120px;
