@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Product from "./../components/Product";
 import { BiChevronsLeft, BiChevronsRight } from "react-icons/bi";
 
-const Carousel = ({ products, bgColor }) => {
+const Carousel = ({ products}) => {
   const [position, setPosition] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(0);
   const containerRef = useRef(null);

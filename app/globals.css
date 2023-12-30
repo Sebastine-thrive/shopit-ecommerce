@@ -237,6 +237,7 @@ span.text-red {
 
 .redirect-home:hover,
 .redirect-home:focus {
+  transform: scale(1.1);
   color: red;
 }
 
@@ -263,7 +264,7 @@ span.text-red {
   font-weight: 200;
 }
 
-.footer-banner-container {
+.faq-container {
   padding: 10px 40px;
   background-color: #f02d34;
   border-radius: 15px;
@@ -933,7 +934,7 @@ span.text-red {
   }
 
   .product-detail-desc {
-    margin-top:7rem;
+    margin-top: 7rem;
   }
 
   .hero-banner-image {
@@ -975,7 +976,7 @@ span.text-red {
 
   .product-card {
     width: 160px;
-    height: 200px;
+    height: 230px;
   }
 
   .product-image {
@@ -1010,8 +1011,8 @@ span.text-red {
   .image-container {
     margin-left: 0;
   }
-  
-/* 
+
+  /* 
   .product-detail-desc {
     margin-top: 7rem;
   } */

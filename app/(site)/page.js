@@ -1,6 +1,5 @@
 import React from "react";
-import { FooterBanner} from "./components";
-
+import { FooterBanner } from "./components";
 import {
   getBannerData,
   getElectronicsProducts,
@@ -19,23 +18,23 @@ export default async function Home() {
 
   return (
     <div className="overflow-hidden">
-        <HeroBannerCarousel heroBanner={bannerContent ? bannerContent : null} />
+      <HeroBannerCarousel heroBanner={bannerContent ? bannerContent : null} />
 
-      <div className="best-selling-products ">
+      <div className="best-selling-products rounded-t-md py-8">
         <div className="products-heading my-6 ">
           <h2> Best Selling Products</h2>
         </div>
         <Carousel products={bestSellingProducts} />
       </div>
 
-      <div className="electronic-products bg-[#e0e8d1]">
+      <div className="electronic-products bg-[#e0e8d1] rounded-t-md	 py-8">
         <div className="products-heading my-6">
           <h2> Electronics and gadgets</h2>
         </div>
         <Carousel products={electronics} />
       </div>
 
-      <div className="fasion-products mb-[4rem]">
+      <div className="fasion-products mb-[4rem] rounded-t-md	  py-8">
         <div className="products-heading my-6">
           <h2> Fashion and accessories</h2>
         </div>
