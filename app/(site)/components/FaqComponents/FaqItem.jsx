@@ -10,15 +10,14 @@ function FaqItem({ question, answer }) {
   };
 
   return (
-    <div className="border-b border-gray-300 w-full ">
+    <div className="w-full">
       <div
         className="flex justify-between items-center p-4 cursor-pointer"
         onClick={toggleAccordion}
       >
-        <div className="font-semibold text-lg ml-[-1rem] ">{question}</div>
-        <div className="text-xl">
+        <div className="font-semibold xxs:text-sm xs:text-md  md:text-lg ml-[-1rem] ">{question}</div>
+        <div className="text-xl faq-icons">
           {isOpen ? (
-            // "▲" :
             <IoIosArrowUp size={20} />
           ) : (
 
@@ -34,4 +33,4 @@ function FaqItem({ question, answer }) {
     </div>
   );
 }
-export default FaqItem
+export default FaqItem;

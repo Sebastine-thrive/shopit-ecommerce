@@ -1,5 +1,5 @@
 import React from "react";
-import { FooterBanner } from "./components";
+import { FaqWrapper } from "./components";
 import {
   getBannerData,
   getElectronicsProducts,
@@ -36,7 +36,7 @@ export default async function Home() {
         <Carousel products={electronics} />
       </div>
 
-      <div className="fasion-products mb-[4rem] rounded-t-md py-8">
+      <div className="fasion-products  rounded-t-md py-8">
         <div className="product-wrap">
           <div className="products-heading my-6">
             <h2> Fashion and accessories</h2>
@@ -44,8 +44,9 @@ export default async function Home() {
           <Carousel products={clothing} />
         </div>
       </div>
-
-      <FooterBanner />
+      <div className="flex justify-center">
+        <FaqWrapper />
+      </div>
     </div>
   );
 }

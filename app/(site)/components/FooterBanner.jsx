@@ -1,8 +1,6 @@
-import React from "react";
-import Link from "next/link";
 import Faq from "./FaqComponents/Faq";
 
-const FooterBanner = () => {
+const FaqWrapper = () => {
  
   return (
     <div className="faq-container">
@@ -11,4 +9,4 @@ const FooterBanner = () => {
   );
 };
 
-export default FooterBanner;
+export default FaqWrapper;
