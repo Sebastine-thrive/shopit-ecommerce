@@ -26,20 +26,19 @@ const AddToCartAndBuy = ({ product, slug }) => {
   return (
     <>
       {isProductInCart(slug, cartItems) ? (
-        <div className="product-in-cart flex justify-center">
+        <div className="product-in-cart flex ">
           {" "}
-          <p className="py-[10px]"> This product is in the cart.</p>
-          <p
-            className="go-to-cart ml-2 text-red-500 flex items-center cursor-pointer"
+          <p> This product is in the cart.</p>
+          <div
+            className="go-to-cart ml-2 text-red-500 flex text-[16px] items-center cursor-pointer"
             onClick={() => setShowCart(true)}
           >
-          
-          View Cart{" "}
-            <span className="text-red-500">
+            <p> View Cart </p>
+            <p className=" text-red-500 items-center ">
               {" "}
               <BiChevronsRight />{" "}
-            </span>{" "}
-          </p>
+            </p>{" "}
+          </div>
         </div>
       ) : (
         <div className="flex justify-center">

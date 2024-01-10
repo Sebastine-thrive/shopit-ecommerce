@@ -158,6 +158,16 @@ span.text-red {
   max-height: 300px;
 }
 
+.large-product-image {
+  width:auto;
+  height:auto;
+}
+
+.small-image {
+  width:auto;
+  height:auto;
+}
+
 .product-name {
   font-weight: 500;
 }
@@ -233,6 +243,7 @@ span.text-red {
 
 .redirect-home {
   margin-top: 2rem;
+  width: 50px;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -341,7 +352,7 @@ span.text-red {
 
 .footer-container p span {
   width: 50%;
-  margin:0 15px;
+  margin: 0 15px;
 }
 
 .footer-container .footer-icons {
@@ -355,7 +366,7 @@ span.text-red {
   width: 50%;
   display: flex;
   /* gap: 30px; */
-  margin:0 15px;
+  margin: 0 15px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -812,7 +823,7 @@ span.text-red {
   }
 
   .product-detail-desc {
-    margin-top: 3rem;
+    margin-top: 12rem;
   }
 
   .product-detail-desc .quantity,
@@ -969,10 +980,6 @@ span.text-red {
     display: none;
   }
 
-  .product-detail-desc {
-    margin-top: 7rem;
-  }
-
   .hero-banner-image {
     margin-top: 2rem;
     width: 250px;
@@ -1002,8 +1009,13 @@ span.text-red {
   }
 }
 
-@media screen and (max-width: 431px) {
+@media screen and (max-width: 541px) {
+  .product-detail-desc {
+    margin-top: 7rem;
+  }
+}
 
+@media screen and (max-width: 431px) {
   .logo {
     margin-left: -1.2rem;
   }
@@ -1113,5 +1125,4 @@ span.text-red {
     margin: auto;
     margin-top: 20px;
   }
-
 }

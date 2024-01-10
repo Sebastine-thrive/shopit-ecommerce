@@ -8,6 +8,7 @@ import { BiChevronsLeft } from "react-icons/bi";
 import { Toaster } from "react-hot-toast";
 import StarRating from "./StarRating";
 import "./../../../globals.css";
+import OtherProductsCarousel from "../OtherProductsCarousel";
 
 const ProductDetails = ({ product, products, slug }) => {
   const { image, name, details, price } = product;
@@ -56,7 +57,7 @@ const ProductDetails = ({ product, products, slug }) => {
           <Link href="/">
             <div className="redirect-home">
               <BiChevronsLeft />
-              <h4 className=" font-medium"> Continue shopping </h4>
+              <h4 className="font-medium"> Continue shopping </h4>
             </div>
           </Link>
         </div>
@@ -70,6 +71,7 @@ const ProductDetails = ({ product, products, slug }) => {
               products?.map((item) => {
                 return <Product key={item._id} product={item} />;
               })
+              // <OtherProductsCarousel  products = {products} />
             ) : (
               <p> Loading other products you may like... </p>
             )}

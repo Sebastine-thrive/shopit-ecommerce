@@ -11,7 +11,7 @@ const Carousel = ({ products}) => {
   useEffect(() => {
     // Calculate the number of items to display based on container width
     const containerWidth = containerRef.current.offsetWidth;
-    const itemWidth = 270; // Adjust this based on your item width
+    const itemWidth = 270; // width of product card
     const newItemsPerPage = Math.floor(containerWidth / itemWidth);
     setItemsPerPage(newItemsPerPage);
   }, [containerRef]);

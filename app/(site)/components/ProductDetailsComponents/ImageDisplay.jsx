@@ -19,6 +19,7 @@ const ImageDisplay = ({ image }) => {
           className="large-product-image bg-white"
           width="450"
           height="350"
+          priority={true}	
         />
       </div>
       <div className="small-images-container">
@@ -30,6 +31,7 @@ const ImageDisplay = ({ image }) => {
             alt="smaller product image"
             width="100"
             height="100"
+            priority={true}	
             className={
               i === index ? "small-image selected-image" : "small-image"
             }

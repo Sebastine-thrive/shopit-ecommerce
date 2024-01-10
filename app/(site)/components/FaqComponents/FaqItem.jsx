@@ -15,7 +15,7 @@ function FaqItem({ question, answer }) {
         className="flex justify-between items-center p-4 cursor-pointer"
         onClick={toggleAccordion}
       >
-        <div className="font-semibold xxs:text-sm xs:text-md  md:text-lg ml-[-1rem] ">{question}</div>
+        <div className="font-semibold xxs:text-[10px] xs:text-[12px] sm:text-sm md:text-lg ml-[-1rem] ">{question}</div>
         <div className="text-xl faq-icons">
           {isOpen ? (
             <IoIosArrowUp size={20} />
