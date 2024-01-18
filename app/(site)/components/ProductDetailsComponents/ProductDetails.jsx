@@ -55,9 +55,11 @@ const ProductDetails = ({ product, products, slug }) => {
             <AddToCartAndBuy product={product} slug={slug} />
           </div>
           <Link href="/">
-            <div className="redirect-home">
+            <div className="inline-block">
+            <div className="redirect-home flex items-center ">
               <BiChevronsLeft />
-              <h4 className="font-medium"> Continue shopping </h4>
+              <h4 className="font-medium w-auto"> Continue shopping </h4>
+            </div>
             </div>
           </Link>
         </div>
@@ -65,13 +67,15 @@ const ProductDetails = ({ product, products, slug }) => {
 
       <div className="maylike-products-wrapper">
         <h2 className="font-medium">You may also like</h2>
+
+      {/* A todo: reshuffle to carousel movemement for small and large screens using their prouct card sizes */}
+
         <div className="marquee">
           <div className="maylike-products-container track">
             {products ? (
               products?.map((item) => {
                 return <Product key={item._id} product={item} />;
               })
-              // <OtherProductsCarousel  products = {products} />
             ) : (
               <p> Loading other products you may like... </p>
             )}

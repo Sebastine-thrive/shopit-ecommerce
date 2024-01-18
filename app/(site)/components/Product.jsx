@@ -3,14 +3,12 @@ import React from "react";
 import Link from "next/link";
 import Img from "next/image";
 
-import { urlForImage } from "@/sanity/lib/image";
 
+import { urlForImage } from "@/sanity/lib/image";
 
 const Product = ({ product: { image, name, slug, price } }) => {
   return (
-    <div
-   
-    >
+    <div>
       <Link href={`/product/${slug?.current}`}>
         <div className="product-card xs:flex   xs:flex-col xs:justify-center xs:items-center md:block">
           <Img
@@ -18,7 +16,7 @@ const Product = ({ product: { image, name, slug, price } }) => {
             alt={name}
             width={250}
             height={250}
-            className="product-image"
+            className="product-image w-auto"
           />
           <p className="product-name"> {name} </p>
           <p className="product-price">
