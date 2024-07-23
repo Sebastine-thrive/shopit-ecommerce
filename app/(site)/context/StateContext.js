@@ -13,6 +13,7 @@ export const StateContext = ({ children }) => {
 
   let foundProduct;
   let index;
+ 
 
   const onAdd = (product, quantity) => {
     const productExistsInCart = cartItems.find(
@@ -36,8 +37,7 @@ export const StateContext = ({ children }) => {
       product.quantity = quantity;
 
       setCartItems([...cartItems, { ...product }]);
-      setQty(1);
-    }
+      setQty(1);    }
     toast.success(`${qty} ${product.name} added to the cart`);
   };
 
@@ -49,6 +49,7 @@ export const StateContext = ({ children }) => {
       (prevTotalPrice) =>
         prevTotalPrice - foundProduct.price * foundProduct.quantity
     );
+    setTotalPrice((prevTotalPrice) => prevTotalPrice - (foundProduct.price * foundProduct.quantity));
     setTotalQuantity(
       (prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity
     );
@@ -59,7 +60,7 @@ export const StateContext = ({ children }) => {
     foundProduct = cartItems.find((item) => item._id === id);
     index = cartItems.findIndex((product) => product._id === id);
     const newCartItems = cartItems.filter((item) => item._id !== id);
-
+  
     let updatedItem;
     if (value === "increase") {
       updatedItem = { ...foundProduct, quantity: foundProduct.quantity + 1 };
@@ -68,7 +69,6 @@ export const StateContext = ({ children }) => {
         updatedItem = { ...foundProduct, quantity: foundProduct.quantity - 1 };
       }
     }
-
     if (updatedItem) {
       const updatedCartItems = [...newCartItems, updatedItem];
       const sortedCartItems = updatedCartItems.sort((a, b) =>
@@ -87,7 +87,7 @@ export const StateContext = ({ children }) => {
       );
     }
   };
-
+  
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
   };

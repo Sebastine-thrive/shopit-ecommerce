@@ -295,11 +295,9 @@ span.text-red {
 .faq-container {
   line-height: 1.5;
   padding: 10px 10px;
-  /* background-color: #f02d34; */
   border-radius: 15px;
   max-width: 1280px;
   height: auto;
-  color: white;
   width: 98%;
 }
 
@@ -498,7 +496,7 @@ span.text-red {
 }
 
 .product-detail-container {
-  display: flex;
+  /* display: flex; */
   gap: 40px;
   margin: 40px;
   margin-top: 60px;

@@ -19,13 +19,13 @@ const Faq = () => {
     },
     {
       question: "What is the quality assurance on goods bought from ShopIt?",
-      answer: "T.marqueehe quality of goods bought are assuredly of good quality.",
+      answer: "Quality of goods bought are assuredly of good quality.",
     },
   ];
 
   return (
     <div className="faq flex flex-col text-center gap-2 w-[98%] m-auto ">
-      <h2 className="text-2xl font-bold mb-4 ">FAQs</h2>
+      <h2 className="text-2xl font-extrabold mb-4 ">FAQs</h2>
       <div className="accordion  text-center">
         {faqData.map((item, index) => (
           <FaqItem key={index} question={item.question} answer={item.answer} />

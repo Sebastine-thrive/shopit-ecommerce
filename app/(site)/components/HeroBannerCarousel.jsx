@@ -26,6 +26,7 @@ const HeroBannerCarousel = ({ heroBanner }) => {
         <div
           key={currentIndex}
           className="hero-info pl-[2rem] lg:pl-0 lg:mr-[7rem] xxs:mt-[-3rem] lg:mt-8 "
+
         >
           <p className="small-text mt-8">
             {heroBanner[currentIndex]?.smallText}

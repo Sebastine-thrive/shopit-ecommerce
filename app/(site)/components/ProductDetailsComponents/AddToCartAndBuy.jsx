@@ -1,5 +1,4 @@
 "use client";
-// import { useStateContext } from "@/app/context/StateContext";
 import React from "react";
 import { BiChevronsRight } from "react-icons/bi";
 
@@ -45,12 +44,14 @@ const AddToCartAndBuy = ({ product, slug }) => {
           <button
             type="button"
             className="add-to-cart rounded-md"
+            // className="add-to-cart"
             onClick={() => onAdd(product, qty)}
           >
             Add to Cart
           </button>
 
           <button type="button" className="buy-now  rounded-md ml-8" onClick={handleBuyNow}>
+          {/* <button type="button" className="buy-now ml-8" onClick={handleBuyNow}> */}
             Buy Now
           </button>
         </div>

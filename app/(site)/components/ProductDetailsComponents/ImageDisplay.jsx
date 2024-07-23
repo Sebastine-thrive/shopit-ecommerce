@@ -9,6 +9,7 @@ import "./../../../globals.css";
 const ImageDisplay = ({ image }) => {
   const [index, setIndex] = useState(0);
   // const [Loading, setIsLoading] = useState(false);
+  const [Loading, setIsLoading] = useState(false);
 
   return (
     <div className = "images-wrapper">

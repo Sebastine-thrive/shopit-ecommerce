@@ -17,7 +17,7 @@ function FaqItem({ question, answer }) {
         className="flex justify-between items-center p-4 cursor-pointer"
         onClick={toggleAccordion}
       >
-        <div className="font-semibold xxs:text-[10px] xs:text-[12px] sm:text-sm md:text-lg ml-[-1rem] ">
+        <div className="font-bold xxs:text-[10px] xs:text-[12px] sm:text-sm md:text-lg ml-[-1rem] ">
           {question}
         </div>
         <div className="text-xl faq-icons">
@@ -36,10 +36,11 @@ function FaqItem({ question, answer }) {
       </div>
       {isOpen && (
         <div className="p-4 bg-gray-100 rounded-md">
-          <p className="text-black">{answer}</p>
+          <p className="text-black font-semibold">{answer}</p>
         </div>
       )}
     </div>
   );
 }
+
 export default FaqItem;
