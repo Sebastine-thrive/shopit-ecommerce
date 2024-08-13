@@ -11,7 +11,7 @@ const HeroBannerComponent2 = ({ heroBannerData }) => {
   return (
     <div>
       <div className="hero-banner-container  flex xxs:flex-col lg:flex-row xxs:mt-4">
-        <div className="hero-info xs:mr-[2rem] lg:mr-[7rem] xxs:mt-[-3rem] lg:mt-8 ">
+        {/* <div className="hero-info xs:mr-[2rem] lg:mr-[7rem] xxs:mt-[-3rem] lg:mt-8 ">
           <p className="small-text mt-8">{smallText}</p>
           <h1 className="mt-4">{largeText1}</h1>
           <h3 className="xs:mt-4 lg:mt-8">{midText}</h3>
@@ -20,7 +20,7 @@ const HeroBannerComponent2 = ({ heroBannerData }) => {
               <button type="button">{buttonText}</button>
             </Link>
           </div>
-        </div>
+        </div> */}
 
         <div className="hero-img lg:mt-[-1.5rem] xxs:mt-4 ">
           <Image

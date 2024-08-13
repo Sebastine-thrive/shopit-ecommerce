@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <div className="overflow-hidden bg-[#e0e8d1]">
 
-      <div className="flex justify-center bg-transparent">
+      <div className="hero-bearer flex justify-center bg-transparent">
         <HeroContent heroBannerArray={bannerContent ? bannerContent : null} />
       </div>
 

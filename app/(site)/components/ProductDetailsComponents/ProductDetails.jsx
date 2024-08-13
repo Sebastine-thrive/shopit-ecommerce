@@ -23,7 +23,7 @@ const ProductDetails = ({ product, products, slug }) => {
           </div>
 
           {/* Name and Price- server components */}
-          <div className="product-detail-desc px-8 max-w-fit w-[98%] md:w-[96%] mt-[15rem] md:mt-[18rem] lg:mt-0 lg:ml-[5rem] bg-red-100 rounded-md">
+          <div className="product-detail-desc px-8 max-w-[95%] w-[95%] md:w-[90%] mt-[15rem] md:mt-[18rem] lg:mt-0 lg:ml-[5rem] bg-red-100 rounded-md">
             {/* <div className="product-detail-desc xss:w-[98%] md:w-[96%]"> */}
             <h1 className=" font-bold text-xl capitalize">{name}</h1>
             <div className="reviews flex">

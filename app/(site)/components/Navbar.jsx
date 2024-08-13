@@ -8,8 +8,6 @@ import { useStateContext } from "../context/StateContext";
 import logo from "./../../../public/logo/shopit.png";
 import "./../../globals.css";
 
-
-
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantity } = useStateContext();
 
@@ -35,7 +33,11 @@ const Navbar = () => {
           {totalQuantity ? totalQuantity : 0}{" "}
         </span>
       </button>
-      {showCart ? <Cart /> : null}
+      {showCart && (
+        <div className="ease-in duration-2000">
+          <Cart />
+        </div>
+      )}
     </div>
   );
 };

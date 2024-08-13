@@ -4,45 +4,43 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const HeroBannerComponent1 = ({ heroBannerData }) => {
+const HeroBannerComponent = ({ heroBannerData }) => {
   const { smallText, midText, largeText1, product, buttonText, image, desc } =
-  heroBannerData;
+    heroBannerData;
   return (
-    <div >
-      <div className="hero-banner-container flex xxs:flex-col lg:flex-row xxs:mt-4">
-        <div
-          className="hero-info xs:mr-[2rem] lg:mr-[7rem] xxs:mt-[-3rem] lg:mt-8 "
-        >
-          <p className="small-text mt-8">
-          {smallText}
+    <div>
+      <div className="hero-banner-container flex xxs:flex-col lg:flex-row xxs:items-center  ">
+        <div className="hero-info mx-auto text-center mb-16 lg:mx-0 lg:mb-0 lg:mr-8 my-4">
+          <p className="small-text w-auto text-center text-xl md:text-2xl my-4 lg:my-8">
+            {smallText}
           </p>
-          <h1 className="mt-4">{largeText1}</h1>
-          <h3 className="xs:mt-4 lg:mt-8">
-          {midText}
+          <h1 className="large-text text-2xl md:text-4xl my-4 lg:my-8">
+            {largeText1}
+          </h1>
+          <h3 className="mid-text xs:my-8 text-xl md:text-3xl lg:my-12 ">
+            {midText}
           </h3>
-          <div className="xs:mt-[1rem] md:mt-[2rem]lg:mt-4">
-          <Link href={`/product/${product}`}>
-              <button type="button">
-              {buttonText}
-              </button>
+          <div className="shop-now xs:mt-[1rem] md:mt-[2rem] lg:mt-4">
+            <Link href={`/product/${product}`}>
+              <button type="button">{buttonText}</button>
             </Link>
           </div>
         </div>
 
-        <div className="hero-img lg:mt-[-1.5rem] xxs:mt-4 ">
+        <div className="hero-img xxs:mt-4 md:mt-8 lg:mt-0 lg:ml-8 my-4 ">
           <Image
             src={urlForImage(image).url()}
             alt="product image"
             width={400}
             height={400}
-            className="hero-banner-image"
+            className="hero-banner-image mx-auto"
           />
 
           <div>
             <div className="desc xxs:mt-2 lg:mt-4 ">
-              <h5>Description:</h5>
+              {/* <h5>Description:</h5> */}
               <p className="text-white xxs:font-normal lg:font-medium">
-              {desc}
+                {desc}
               </p>
             </div>
           </div>
@@ -52,4 +50,4 @@ const HeroBannerComponent1 = ({ heroBannerData }) => {
   );
 };
 
-export default HeroBannerComponent1;
+export default HeroBannerComponent;

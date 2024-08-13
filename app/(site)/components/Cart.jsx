@@ -7,27 +7,27 @@ import CartWrapper from "./CartComponents/CartWrapper";
 import CartCheckout from "./CartComponents/CartCheckout";
 
 const Cart = () => {
-
   return (
-    <CartWrapper>
-      <div className="cart-container mb-4">
-        {/* button component showing  the cart quantity. uses usecontext -client component */}
-        <CartQuantity />
+    
+      <CartWrapper>
+        <div className="cart-container mb-4">
+          {/* button component showing  the cart quantity. uses usecontext -client component */}
+          <CartQuantity />
 
-        {/* Encourage shopping if no item in cart */}
-        <ContinueShopping />
+          {/* Encourage shopping if no item in cart */}
+          <ContinueShopping />
 
-        {/* Cart product quantity display */}
-        <CartProducts />
+          {/* Cart product quantity display */}
+          <CartProducts />
 
-        {/* Cart Checkout */}
-        {/* <div className="mt-8"> */}
-          <CartCheckout 
-          // handleCheckout={handleCheckout} 
+          {/* Cart Checkout */}
+          {/* <div className="mt-8"> */}
+          <CartCheckout
+          // handleCheckout={handleCheckout}
           />
-        {/* </div> */}
-      </div>
-    </CartWrapper>
+          {/* </div> */}
+        </div>
+      </CartWrapper>
   );
 };
 
