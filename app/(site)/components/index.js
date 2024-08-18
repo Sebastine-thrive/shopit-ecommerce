@@ -5,4 +5,4 @@ export { default as Layout } from "./Layout";
 export { default as Product } from "./Product";
 // export { default as FaqWrapper } from "./FaqBanner";
 export { default as FaqWrapper } from "./FooterBanner";
-export { default as Cart } from "./Cart";
+// export { default as Cart } from "./Cart";

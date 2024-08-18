@@ -4,7 +4,7 @@ import LoadingComponent from "./components/LoadingComponent";
 
 const Loading = () => {
   return (
-    <div className="mt-16 max-h-[100vh] h-[100vh] flex justify-center text-center">
+    <div className="max-h-[100vh] h-[100vh] flex items-center justify-center">
       <LoadingComponent />
     </div>
   );

@@ -45,7 +45,7 @@ const CartCheckout = () => {
     return (
       <div className="payment-btn-container">
         <button
-          className="btn"
+          className="btn checkout-pay-button"
           onClick={() => {
             initializePayment(onSuccess, onClose);
           }}
